@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CrachApp</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -15,30 +15,41 @@
     </head>
     <body>
         <div class="container">
-        <h2>1 - Criar Modelo</h2>
-            <label for="imageUpload" class="btn btn-primary">Anexar Imagem de Fundo</label>
-            <input type="file" id="imageUpload" accept="image/*" style="display: none" (change)="onFileSelected($event)">
-            <a href="https://blog.even3.com.br/crachas-para-eventos-academicos/">Dica: Templates</a>
-            <br>
-            <br>
-    
-            <div id="image" contenteditable="true" style="height: 1240px; width: 872px;">
+            @if(session()->has('message'))
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        {{ session()->get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                @endif
+            <form action="{{ URL::to('/image') }}" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <h2>1 - Criar Modelo</h2>
+                <label for="imageUpload" class="btn btn-primary">Anexar Imagem de Fundo</label>
+                <input type="file" id="imageUpload" accept="image/*" style="display: none" (change)="onFileSelected($event)" name="back">
+                <a href="https://blog.even3.com.br/crachas-para-eventos-academicos/">Dica: Templates</a>
+                <br>
+                <br>
+        
+                <div id="image" contenteditable="true" style="height: 640px; width: 436px;">
 
-                <img src="img/Cracha01.png" height="1240px" width= "872px">
+                    <img src="storage/back/1.png" height="640px" width= "436px">
+                    
+                </div>
                 
-            </div>
-            
-            <br>
+                <br>
 
-            <h2>2 - Importar Participantes</h2>
-            <h5>Copie o conteúdo da planilha excel, incluindo os cabeçalhos e cole aqui</h5>
-            <br>
-            <textarea class="form-control" style="height: 400px; width: 900px"></textarea>
+                <h2>2 - Importar Participantes</h2>
+                <h5>Copie o conteúdo da planilha excel, incluindo os cabeçalhos e cole aqui</h5>
+                <br>
+                <textarea name="participantes" class="form-control" style="height: 400px; width: 900px"></textarea>
 
-            <br>
+                <br>
 
             <h2>3 - Baixar</h2>
-            <button class="btn btn-primary" >Baixar Crachás</button> 
+            <input class="btn btn-primary" type="submit" value="Baixar Crachás " />   
+            </form>
 </div>
     </body>
 </html>

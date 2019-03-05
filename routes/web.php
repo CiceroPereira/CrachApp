@@ -21,3 +21,4 @@ Route::get('/teste', function () {
 }); 
 
 Route::get('/pdf', 'PdfController@get');
+Route::post('/image', 'PdfController@store');
