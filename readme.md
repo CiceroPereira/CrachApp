@@ -19,7 +19,7 @@
 > php artisan storage:link
 > php artisan serve
 ```
-* Colocar uma imagem default com o nome 1.png em storage\app\public\back
+* Colocar uma imagem default com o nome 1.png em storage\app\public\back(pode ser usada a imagem que está no diretorio public/img)
 * Ative o apache e o mySql em seu control pane e abra seu navegador em http://localhost:8000
 
 ### Detalhes sobre alguns requisitos
