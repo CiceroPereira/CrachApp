@@ -41,7 +41,7 @@
                 <br>
 
                 <h2>2 - Importar Participantes</h2>
-                <h5>Copie o conteúdo da planilha excel, incluindo os cabeçalhos e cole aqui</h5>
+                <h5>Copie e cole aqui o conteúdo da planilha excel, incluindo nas seguinte ordem os campos:<br> nome, país, instituição, email, inscrição </h5>
                 <br>
                 <textarea name="participantes" class="form-control" style="height: 400px; width: 900px"></textarea>
 
