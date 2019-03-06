@@ -14,7 +14,7 @@ class PdfController extends Controller
 
 		$participantes = Participante::all();
 
-		$pdf = PDF::loadView('teste', compact('participantes'));
+		$pdf = PDF::loadView('pdfGenerate', compact('participantes'));
 		return $pdf->stream('cracha.pdf');
 	}
 
